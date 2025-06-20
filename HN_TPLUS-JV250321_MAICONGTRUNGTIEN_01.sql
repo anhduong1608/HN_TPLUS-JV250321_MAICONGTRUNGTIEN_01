@@ -35,16 +35,6 @@ CREATE TABLE `Enrollment`(
  ON DELETE CASCADE
 );
 
-
--- 4. Cho phép lưu trữ thông tin thanh toán khoá học (Payment) gồm các thông tin sau:
--- ●	Mã thanh toán (payment_id) là một số nguyên có thể tự tăng.
--- ●	Mã đơn đăng ký (enrollment_id) bắt buộc phải có, là đơn đăng ký đã được thanh toán.
--- ●	Phương thức thanh toán (payment_method) là kiểu Enum , là 1 trong các giá trị  "Credit Card", "Bank Transfer", "Cash".
--- ●	Số tiền thanh toán (payment_amount) là số thực thể hiện số tiền học viên đã thanh toán
--- ●	Ngày thanh toán (payment_date) lưu trữ ngày, tháng, năm học viên đã thanh toán.
--- ●	Trạng thái thanh toán (payment_status) có các giá trị: "Success", "Failed", "Pending".
-
-
 CREATE TABLE `Payment`(
 `payment_id` INT AUTO_INCREMENT PRIMARY KEY,
 `enrollment_id` INT NOT NULL,
